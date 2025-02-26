@@ -1,9 +1,9 @@
 <?php
 
-use core\Database;
+use Core\App;
 
-$config = require base_path('config.php');
-$db = new Database($config['database'], $config['database']['username'], $config['database']['password']);
+$db = App::resolve('Core\Database');
+
 
 $currentUserId = 3;
 
