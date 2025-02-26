@@ -6,7 +6,7 @@
 
 <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <form method="POST" action="" class="space-y-12">
+    <form method="POST" action="/notes-app/notes" class="space-y-12">
       <div class="space-y-12">
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div class="col-span-full">
