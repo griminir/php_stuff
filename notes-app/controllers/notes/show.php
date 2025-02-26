@@ -8,7 +8,7 @@ $currentUserId = 3;
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // form was submitted delete current note
+
   $note = $db->query('select * from notes where id = :id', [':id' => $_GET['id']])->findOrFail();
 
   authorize($note['user_id'] == $currentUserId);

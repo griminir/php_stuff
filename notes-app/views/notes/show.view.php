@@ -11,6 +11,7 @@
 
     <form method="POST" class="mt-6">
       <input hidden name="id" type="text" value="<?= $note['id'] ?>">
+      <input hidden name='_method' value="DELETE" type="text">
       <button class="text-sm text-red-500">Delete</button>
     </form>
   </div>

@@ -1,10 +1,10 @@
 <?php
 
-return [
-  '/notes-app/' => 'controllers/index.php',
-  '/notes-app/about' => 'controllers/about.php',
-  '/notes-app/contact' => 'controllers/contact.php',
-  '/notes-app/notes' => 'controllers/notes/index.php',
-  '/notes-app/notes/create' => 'controllers/notes/create.php',
-  '/notes-app/note' => 'controllers/notes/show.php',
-];
+$router->get('/notes-app/', 'controllers/index.php');
+$router->get('/notes-app/about', 'controllers/about.php');
+$router->get('/notes-app/contact', 'controllers/contact.php');
+
+$router->get('/notes-app/notes', 'controllers/notes/index.php');
+$router->get('/notes-app/note', 'controllers/notes/show.php');
+$router->get('/notes-app/notes/create', 'controllers/notes/create.php');
+
