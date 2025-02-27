@@ -13,3 +13,6 @@ $router->patch('/notes-app/note', 'controllers/notes/update.php');
 
 $router->get('/notes-app/notes/create', 'controllers/notes/create.php');
 $router->post('/notes-app/notes', 'controllers/notes/store.php');
+
+$router->get('/notes-app/register', 'controllers/registration/create.php');
+$router->post('/notes-app/register', 'controllers/registration/store.php');

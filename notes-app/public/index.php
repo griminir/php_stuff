@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // need to use define because of the use of a function in params
 define('BASE_PATH', str_replace("\\", "/", __DIR__) . '/../');
 
