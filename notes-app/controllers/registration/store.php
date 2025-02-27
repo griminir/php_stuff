@@ -3,6 +3,8 @@
 use Core\Validator;
 use Core\App;
 
+$db = App::resolve('Core\Database');
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -18,11 +20,10 @@ if (!Validator::string($password, 7, 255)) {
 
 
 if (!empty($errors)) {
-  return view('/registration/create.view.php', ['errors' => $errors]);
+  return view('registration/create.view.php', ['errors' => $errors]);
 }
 
 
-$db = App::resolve('Core\Database');
 
 $user = $db->query('select email from users where email = :email', [':email' => $email])->find();
 
@@ -33,9 +34,7 @@ if ($user) {
 } else {
   $db->query('insert into users(email, password) values (:email, :password)', [':email' => $email, ':password' => password_hash($password, PASSWORD_BCRYPT)]);
 
-  $_SESSION['user'] = [
-    'email' => $email
-  ];
+  login($user);
 
   header('location: /notes-app/');
   die();

@@ -15,4 +15,8 @@ $router->get('/notes-app/notes/create', 'controllers/notes/create.php');
 $router->post('/notes-app/notes', 'controllers/notes/store.php');
 
 $router->get('/notes-app/register', 'controllers/registration/create.php')->only('guest');
-$router->post('/notes-app/register', 'controllers/registration/store.php');
+$router->post('/notes-app/register', 'controllers/registration/store.php')->only('guest');
+
+$router->get('/notes-app/login', 'controllers/session/create.php')->only('guest');
+$router->post('/notes-app/session', 'controllers/session/store.php')->only('guest');
+$router->delete('/notes-app/session', 'controllers/session/destroy.php')->only('auth');
