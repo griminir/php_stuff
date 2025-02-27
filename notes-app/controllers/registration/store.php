@@ -31,7 +31,7 @@ if ($user) {
   header('location: /notes-app/');
   die();
 } else {
-  $db->query('insert into users(email, password) values (:email, :password)', [':email' => $email, ':password' => $password]);
+  $db->query('insert into users(email, password) values (:email, :password)', [':email' => $email, ':password' => password_hash($password, PASSWORD_BCRYPT)]);
 
   $_SESSION['user'] = [
     'email' => $email
