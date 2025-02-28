@@ -1,6 +1,7 @@
 <?php
 
-logout();
+use Core\Authenticator;
 
-header('location: /notes-app/');
-die();
+(new Authenticator)->logout();
+
+redirect('/notes-app/');
