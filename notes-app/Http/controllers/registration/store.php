@@ -2,6 +2,7 @@
 
 use Core\Validator;
 use Core\App;
+use Core\Authenticator;
 
 $db = App::resolve('Core\Database');
 
@@ -34,7 +35,7 @@ if ($user) {
 } else {
   $db->query('insert into users(email, password) values (:email, :password)', [':email' => $email, ':password' => password_hash($password, PASSWORD_BCRYPT)]);
 
-  login($user);
+  (new Authenticator())->login(['email' => $email]);
 
   header('location: /notes-app/');
   die();
