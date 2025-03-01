@@ -1,0 +1,10 @@
+{
+  "name": "vikto/php_stuff",
+  "authors": [
+    {
+      "name": "griminir",
+      "email": "viktor.elliot.king@gmail.com"
+    }
+  ],
+  "require": {}
+}

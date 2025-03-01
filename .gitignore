@@ -15,3 +15,5 @@ dynamic-web-application/
 /.idea/dataSources/db99b42d-0e09-4637-a8bb-55e25210277e/storage_v2/_src_/schema/sys.zb4BAA.meta
 /.idea/vcs.xml
 /.idea/workspace.xml
+
+/vendor/
