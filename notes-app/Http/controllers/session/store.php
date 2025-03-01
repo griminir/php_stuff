@@ -3,25 +3,21 @@
 
 use Core\Authenticator;
 use Http\Forms\LoginForm;
-use Core\Session;
 
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$form = LoginForm::validate($attributes = [
+    'email' => $_POST['email'],
+    'password' => $_POST['password']
+]);
 
-$form = new LoginForm();
+$signedIn = (new Authenticator)->attempt(
+    $attributes['email'], $attributes['password']
+);
 
-if ($form->validate($email, $password)) {
-  $auth = new Authenticator;
-
-  if ($auth->attempt($email, $password)) {
-    redirect('/notes-app/');
-  } else {
-    $form->error('email', 'No user found for that email address and password');
-  };
+if (!$signedIn) {
+    $form->error(
+        'email', 'No user found for that email address and password'
+    )->throw();
 }
+redirect('/notes-app/');
 
-Session::flash('errors', $form->getErrors());
-Session::flash('old', ['email' => $email]);
-
-redirect('/notes-app/login');
