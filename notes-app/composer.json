@@ -6,11 +6,21 @@
       "email": "viktor.elliot.king@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "illuminate/collections": "^12.0"
+  },
   "autoload": {
     "psr-4": {
       "Core\\": "Core/",
       "Http\\": "Http/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.7"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
     }
   }
 }
