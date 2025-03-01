@@ -1,0 +1,10 @@
+{
+  "name": "vikto/notes-app",
+  "authors": [
+    {
+      "name": "griminir",
+      "email": "viktor.elliot.king@gmail.com"
+    }
+  ],
+  "require": {}
+}
